@@ -11,6 +11,7 @@ export function PostLoginHandler() {
     async function run() {
       setStatus("Fetching data...");
 
+      // simulate a fetch request to an API endpoint, in real impl fetch user /me before redirecting to dashboard
       await fetch("https://jsonplaceholder.typicode.com/todos/1");
 
       setStatus("Almost there...");
