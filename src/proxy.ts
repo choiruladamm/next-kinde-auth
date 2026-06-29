@@ -4,7 +4,7 @@ import { withAuth } from "@kinde-oss/kinde-auth-nextjs/middleware";
 export default function proxy(req: NextRequest) {
   return withAuth(req, {
     isReturnToCurrentPage: true,
-    publicPaths: ["/", "/signin", "/signup", "/api/auth/login", "/api/auth/register"],
+    publicPaths: ["/", "/signin", "/api/mock/migrate", "/api/auth/login", "/api/auth/register"],
   });
 }
 

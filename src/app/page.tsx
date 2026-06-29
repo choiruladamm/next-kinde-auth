@@ -1,6 +1,6 @@
 import {
+  RegisterLink,
   getKindeServerSession,
-  LogoutLink,
 } from "@kinde-oss/kinde-auth-nextjs/server";
 import Link from "next/link";
 
@@ -23,15 +23,12 @@ export default async function Home() {
 
         {authenticated ? (
           <div className="flex flex-col items-center gap-4">
-            <Link
+            <a
               href="/dashboard"
               className="font-medium text-zinc-900 underline underline-offset-2 dark:text-zinc-100"
             >
               Go to dashboard
-            </Link>
-            <LogoutLink className="text-sm text-zinc-500 underline underline-offset-2 hover:text-zinc-900 dark:hover:text-zinc-100">
-              Sign out
-            </LogoutLink>
+            </a>
           </div>
         ) : (
           <div className="flex w-full flex-col gap-3">
@@ -41,12 +38,9 @@ export default async function Home() {
             >
               Sign in
             </Link>
-            <Link
-              href="/signup"
-              className="flex h-11 w-full items-center justify-center rounded-full border border-zinc-200 text-sm font-medium transition-colors hover:bg-zinc-100 dark:border-zinc-800 dark:hover:bg-zinc-900"
-            >
+            <RegisterLink className="flex h-11 w-full items-center justify-center rounded-full border border-zinc-200 text-sm font-medium transition-colors hover:bg-zinc-100 dark:border-zinc-800 dark:hover:bg-zinc-900">
               Create account
-            </Link>
+            </RegisterLink>
           </div>
         )}
       </main>
